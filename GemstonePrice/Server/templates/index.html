@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}.button1 {background-color: #808080;} 
+.body { overflow: hidden; }
+.column { float: left; }
+.half { width: 50%; }
+.last { float: none; width: auto; }
+    </style>
+<body style="background-color:#158FAD;" class="body">
+
+
+    
+<div class="column half">
+  <h1 >Gemstone Price Estimation</h1>
+    <form action="{{url_for('predict_price')}}" method="post">
+        
+        <table>
+            <tr>
+      <td align="right"><b>Carat:</b></td>
+      <td align="left"><input type='text'onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"  name='carat'  required='required'/></td>
+    </tr>
+    <tr>
+      <td align="right"><b>Cut:</b></td>
+      <td align="left">
+           <label >Ideal</label>
+          <input type="radio" id="cut" name="cut" value="Ideal" checked>
+          <label >Premium</label>
+          <input type="radio" id="cut" name="cut" value="Premium">
+          <label >Very Good</label>
+          <input type="radio" id="cut" name="cut" value="Very Good">
+          <label >Good</label>
+          <input type="radio" id="cut" name="cut" value="Good">
+          <label >Fair</label>
+          <input type="radio" id="cut" name="cut" value="Fair">
+        
+        </td>
+    </tr>
+              <tr>
+      <td align="right"><b>Color:</b></td>
+      
+        
+         <td align='left'>
+         <label >D</label>
+          <input type="radio" id="color" name="color" value="D" checked>
+          
+        <label >E</label>
+          <input type="radio" id="color" name="color" value="E">
+          
+         <label >F</label>
+          <input type="radio" id="color" name="color" value="F">
+         
+        <label >G</label>
+        <input type="radio" id="color" name="color" value="G">
+          
+          <label >H</label>
+        <input type="radio" id="color" name="color" value="H">
+        
+        <label >I</label>
+        <input type="radio" id="color" name="color" value="I">
+          
+         <label>J</label>
+             <input type="radio" id="color" name="color" value="J"></td></tr>
+    <tr>
+      <td align="right"><b>Clarity:</b></td>
+      <td align="left"> 
+          <label >SI1</label>
+          <input type="radio" id="clarity" name="clarity" value="SI1" checked>
+          <label >VS2</label>
+          <input type="radio" id="clarity" name="clarity" value="VS2">
+          <label >SI2</label>
+          <input type="radio" id="clarity" name="clarity" value="SI2">
+          <label >VS1</label>
+          <input type="radio" id="clarity" name="clarity" value="VS1">
+          <label >VVS2</label>
+          <input type="radio" id="clarity" name="clarity" value="VVS2">
+        <label >VVS1</label>
+          <input type="radio" id="clarity" name="clarity" value="VVS1">
+          <label >IF</label>
+          <input type="radio" id="clarity" name="clarity" value="IF">
+          <label >I1</label>
+          <input type="radio" id="clarity" name="clarity" value="I1">
+        </td>
+    </tr>
+             <tr>
+      <td align="right"><b>Depth:</b></td>
+      <td align="left"><input type='text' onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"  name='depth'  required='required'/></td>
+    </tr>
+    <tr>
+      <td align="right"><b>Table:</b></td>
+      <td align="left"><input type='text' onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"  name='table' required='required'/></td>
+    </tr>
+            <tr>
+      <td align="right"><b>Length:</b></td>
+      <td align="left"><input type='text' onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"  name='x'  required='required'/></td>
+    </tr>
+                   <tr>
+      <td align="right"><b>Width:</b></td>
+      <td align="left"><input type='text' onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"  name='y'  required='required'/></td>
+    </tr>
+ <tr>
+      <td align="right"><b>Height:</b></td>
+      <td align="left"><input type='text' onkeypress="return (event.charCode !=8 && event.charCode ==0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))"  name='z'  required='required'/></td>
+    </tr>
+       
+         
+         <tr>
+             <td align="right"></td>
+       <td align="left"> <button type="submit" class="button button1">Get Price</button></td></tr></table>
+       
+    
+    </form><br>
+    <b>{{prediction_text}}</b><br><br>
+</div>
+    <div class="column last" ><img  src="https://www.jewelry-secrets.com/Blog/wp-content/uploads/2015/05/Brilliant-Cut-Diamond-Standards.jpg" width="500" height="333"></div>
+
+ <div class="footer" ><img  src="https://www.d2ukjewellery.com/image/data/888ccb63928b7b9bb52799767c434f16--colored-diamonds-diamond-engagement-rings%20(1).jpg" width="500" height="333"></div>
+</body>
+</html>
